@@ -15,7 +15,7 @@ export ARCH=arm64
 export CROSS_COMPILE=/root/aarch64-linux-android-4.9/bin/aarch64-linux-android-
 clear
 mkdir output
-make -C $(pwd) O=output DRG_sprout_defconfig
+make -C $(pwd) O=output SAT-perf_defconfig
 make -j32 -C $(pwd) O=output
 cp -r output/arch/arm64/boot/Image.gz-dtb /root/Kernel/DRG_sprout
 cd DRG_sprout
