@@ -19,8 +19,8 @@ make -C $(pwd) O=output SAT-perf_defconfig
 make -j32 -C $(pwd) O=output
 cp -r output/arch/arm64/boot/Image.gz-dtb /root/Kernel/DRG_sprout
 cd DRG_sprout
-zip -r Kiwis-kernel-9.0-DRG_sprout-$(date +"%Y%m%d")-$(date +"%H%M").zip META-INF patch tools Image.gz-dtb anykernel.sh   
-cp -r Kiwis-kernel-9.0-DRG_sprout-$(date +"%Y%m%d")-$(date +"%H%M").zip /root/kiwis-kernel
+zip -r Kiwis-kernel-10.0-DRG_sprout-$(date +"%Y%m%d").zip META-INF patch tools Image.gz-dtb anykernel.sh   
+cp -r Kiwis-kernel-10.0-DRG_sprout-$(date +"%Y%m%d").zip /root/kiwis-kernel
 cd
 
 echo "--------------------------------------------"
