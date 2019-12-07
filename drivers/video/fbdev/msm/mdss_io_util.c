@@ -17,8 +17,11 @@
 #include <linux/delay.h>
 #include <linux/mdss_io_util.h>
 
-#define MAX_I2C_CMDS  16
+#ifdef CONFIG_TOUCHSCREEN_HIMAX_CHIPSET
 extern uint8_t HX_SMWP_EN;
+#endif
+
+#define MAX_I2C_CMDS  16
 
 void dss_reg_w(struct dss_io_data *io, u32 offset, u32 value, u32 debug)
 {
@@ -253,8 +256,8 @@ int msm_dss_enable_vreg(struct dss_vreg *in_vreg, int num_vreg, int enable)
 	} else {
 
 		for (i = num_vreg-1; i >= 0; i--) {
-#ifdef CONFIG_ZANGYA_CAMERA
-			if (HX_SMWP_EN == 1){
+#ifdef CONFIG_TOUCHSCREEN_HIMAX_CHIPSET
+			if (HX_SMWP_EN == 1) {
 				if((strcmp(in_vreg[i].vreg_name,"lab") == 0) || (strcmp(in_vreg[i].vreg_name,"ibb") == 0) || (strcmp(in_vreg[i].vreg_name,"wqhd-vddio") == 0)){
 					pr_debug("TP_GESTURE don't disable[%d] %s\n",i,in_vreg[i].vreg_name);
 					continue;
