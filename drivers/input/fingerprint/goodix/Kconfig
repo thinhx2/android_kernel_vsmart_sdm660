@@ -4,7 +4,7 @@
 
 menu "Fingerprint device support"
 
-config GOODIX_ZANGYA
+config GOODIX_FINGERPRINT
 	tristate "Goodix fingerprint driver support"
 	default n
 	help
