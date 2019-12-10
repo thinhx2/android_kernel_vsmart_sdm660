@@ -275,7 +275,6 @@ int msm_dss_enable_vreg(struct dss_vreg *in_vreg, int num_vreg, int enable)
 					in_vreg[i].post_off_sleep * 1000);
 			pr_debug("Power_off Disable [%d]  %s\n",i,in_vreg[i].vreg_name);
 		}
-#endif
 	}
 	return rc;
 
