@@ -21,7 +21,7 @@
 #include <linux/mmc/mmc.h>
 #include <linux/reboot.h>
 #include <trace/events/mmc.h>
-
+#include <linux/string.h>
 #include "core.h"
 #include "host.h"
 #include "bus.h"
